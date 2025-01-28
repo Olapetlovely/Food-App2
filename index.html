@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/product-list.css">
+    <title>Food Product List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="product-title-container">
+            <h2>Desserts</h2>
+            <div class="products-container">
+                <!-- products -->
+                <div class="product">
+                    <div class="image">
+                        <img class="product-img" src="https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=600" alt="product">
+                        <div class="btn add-to-cart">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Add to Cart
+                        </div>
+                        <div class="btn plus-min">
+                            <div class="circle minus">-</div>
+                            <p class="no-of-order">1</p>
+                            <div class="circle plus">+</div>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <p class="name">Waffle</p>
+                        <p class="category">Waffle with Berries</p>
+                        <p class="price">6.50</p>
+                    </div>
+                </div>
+                <!-- end of products -->
+            </div>
+        </div>
+        <!-- order details -->
+        <div class="order-section">
+            <h2>
+                Your Cart (
+                <span>0</span>
+                )
+            </h2>
+            <div class="empty-img">
+                <img src="/img/illustration-empty-cart.svg" alt="Empty Image">
+                <p>Your added items will appear here</p>
+            </div>
+            <div class="order-container">
+                <!-- ordered items -->
+                <!-- <div class="order-details-title">
+                    <h3>Classic Tiramisu</h3>
+                    <div class="order-details">
+                        <div>
+                            <p class="no-of-plate">1</p>
+                            <p class="order-price">5.50</p>
+                            <p class="total-price">5.50</p>
+                        </div>
+                        <div class="close-btn">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- end of ordered items -->
+                <div class="total">
+                    <p>Order Total</p>
+                    <p class="total-Amount">46.50</p>
+                </div>
+                <div class="delivery">
+                    <p>
+                        <span class="material-icons"></span>
+                        This is a
+                        <span class="bold">carbon-neutral</span>
+                        delivery
+                    </p>
+                </div>
+                <button id="confirm-order">Confirm Order</button>
+            </div>
+        </div>
+        <!-- Order confirmation -->
+        <div class="confirmation-container">
+            <div class="order-confirmed">
+                <img src="/img/icon-order-confirmed.svg" alt="Confirmation icon">
+                <h2>Order Confirmed</h2>
+                <p>We hope you enjoy your food!</p>
+            </div>
+            <div class="confirm-details">
+                <div class="confirm-detail">
+                    <div class="img-wrapper">
+                        <img src="https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                        <div>
+                            <h3>Classic Tiramisu</h3>
+                            <div class="confirm-order">
+                                <span class="no">1</span>
+                                <span class="confirm-order-price">
+                                    &#64;
+                                    <span>&#36;</span>5.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="confirm-total-price">5.50</p>
+                </div>
+                
+                <div class="confirm-detail">
+                    <p>Order Total</p>
+                    <p class="total-price">&#36;46.50</p>
+                </div>
+            </div>
+            <button class="new-order">Start New Order</button>
+        </div>
+    </div>
+    <script src="/product-list.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root {
+    --green:  hsl(159, 69%, 38%);
+    --Red: hsl(14, 86%, 42%);
+    --deepRed: hsla(14, 99%, 28%, 0.973);
+    --Rose-50: hsl(20, 50%, 98%);
+    --Rose-100: hsl(13, 31%, 94%);
+    --Rose-300: hsl(14, 25%, 72%);
+    --Rose-400: hsl(7, 20%, 60%);
+    --Rose-500: hsl(12, 20%, 44%);
+    --Rose-900: hsl(14, 65%, 9%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    height: 100vh;
+    font-size: 1.2rem;
+    background-color: whitesmoke;
+}
+
+.container {
+    position: relative;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    /* z-index: -1; */
+}
+
+.product-title-container {
+    width: 69%;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.8rem;
+}
+
+ .product {
+    width: 100%;
+  
+}
+
+.image {
+    width: 100%;
+    position: relative        ;     
+}
+
+.product img {
+    width: 100%;
+    border-radius: 13px;
+    border: none; 
+    transition: all 0.4s ease-in, filter 0.5s ease-in;   
+}
+
+.product img:hover {
+    transform: scale(0.95); 
+    filter: contrast(1.1);  
+}
+
+.btn {
+    border: 1px solid var(--Rose-400);
+    border-radius: 3rem;
+    padding: 8px 6px;
+    width: 70%;
+    height: 16%;
+    background-color: var(--Rose-50);
+    text-align: center;
+    position: absolute;
+    bottom: -5%;
+    right: 15%;
+}
+
+.add-to-cart {
+   font-weight: 600;  
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 0.9rem;
+}
+
+.image .btn i {
+    color: var(--Red);
+    font-size: 1.2rem;
+    margin-right: 10px; 
+}
+
+.plus-min {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--Red);
+    border: none;
+    color: #ffffff;
+    visibility: hidden;   
+}
+
+.circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid var(--Rose-50);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.circle:hover {
+    background-color: #ffffff;
+    color: var(--Red);
+}
+
+.product-details {
+    margin-top: 2rem;
+}
+
+.product-details .name {
+    font-weight: 200;
+}
+
+.product-details .category {
+    font-weight: 600;
+}
+
+.product-details .price {
+    font-weight: 600;
+    color: var(--Red);
+}
+
+.order-section {
+    width: 28%;
+    height: 25%;
+    background-color: #ffffff;
+    padding: 1.6rem;
+    border-radius: 10px; 
+}
+
+/* js related */
+.order-container {
+    display: none;
+}
+
+.order-details-title {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--Rose-400);    
+}
+
+.order-details {
+    display: flex;
+    justify-content: space-between;  
+}
+
+.order-details .close-btn {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    border: 1px solid var(--Rose-400);
+    color: var(--Rose-400);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.order-details .close-btn:hover {
+    color: #ffffff;
+    background-color: var(--Red);
+}
+
+.order-section h2 {
+    font-size: 1.2rem;
+    color: var(--Red);
+}
+
+.order-section h3 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.order-details p {
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.order-details .no-of-plate {
+    color: var(--Red);
+    font-size: 1.05rem;
+}
+
+.order-details .no-of-plate::after {
+    content: "x";
+}
+
+.order-details .order-price,
+.order-details .total-price {
+    font-weight: 300;
+    color: var(--Rose-400);
+    font-size: 1.05rem;
+}
+
+.order-details .total-price {
+    font-weight: 500;
+}
+
+.order-details .order-price::before,
+.order-details .total-price::before {
+    content: "$";
+}
+
+.total {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;    
+}
+
+.total-Amount {
+   font-size: 1.8rem;
+   font-weight: 600;
+}
+
+.total-Amount::before {
+   content: "$";
+}
+
+.delivery {
+    height: 3rem;
+    background-color: var(--Rose-50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.4rem 0 1.4rem 0;
+    border-radius: 0.5rem;
+    
+}
+
+.delivery .bold {
+    font-weight: 500;
+}
+
+#confirm-order {
+    display: block;
+    margin: 0 auto;
+    padding: 0.8rem 0;
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    border-radius: 2rem;
+    border: none;
+    background-color: var(--Red);
+    color: var(--Rose-50);
+    cursor: pointer;
+}
+
+#confirm-order:hover {
+    background-color:var(--deepRed);
+}
+
+.empty-img {
+    display: block;
+}
+
+.empty-img img {
+    margin-top: 1.8rem;
+}
+
+.empty-img p {
+    color: var(--Rose-500);
+}
+
+.confirmation-container {
+    position: absolute;
+    top: 8%;
+    right: 32%;
+    width: 30rem;
+    height: auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    display: none;
+    font-size: 1.1rem;
+}
+
+.order-confirmed h2 {
+    padding: 1rem 0;
+}
+
+.order-confirmed p {
+    padding-bottom: 1rem;
+    color: var(--Rose-400);
+}
+
+.confirm-details {
+    background-color: var(--Rose-50);
+    padding: 1.2rem;
+    border-radius: 10px;
+}
+
+.confirm-detail {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--Rose-300);
+    padding: 0.7rem 0;
+}
+
+.confirm-detail:last-child {
+    border: none;
+}
+
+.img-wrapper {
+    display: flex;
+}
+
+.img-wrapper h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+.confirm-details img {
+    width: 4rem;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+
+
+.confirm-order .no {
+   color: var(--Red);
+   font-weight: 500;
+} 
+
+ .no::after {
+    content: "x";
+}
+
+.confirm-order-price {
+    margin-left: 20px;
+    color: var(--Rose-400);
+}
+
+.confirm-order-price span {
+    margin-left: 5px;
+}
+
+.confirm-total-price {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.confirm-total-price::before {
+    content: "$";
+}
+
+.total-price {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.new-order {
+    width: 100%;
+    background-color: var(--Red);
+    border: none;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--Rose-50);
+}
+
+
+/* Media Querry */
+ @media screen and (max-width: 1070px ) {
+    .product-title-container {
+        width: 62%;
+    }
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .order-section {
+        width: 33%;
+    }
+
+    .confirmation-container {
+        right: 25%;
+    }
+} 
+
+ @media screen and (max-width: 1000px ) {
+    .product-title-container {
+        width: 45%;
+    }
+    .products-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .order-section {
+        width: 50%;
+    }
+
+    .confirmation-container {
+        right: 13%;
+        top: 10rem;
+    } 
+}
+
+ @media screen and (max-width: 650px) {
+    .container {
+        display: block;
+    }
+    .product-title-container {
+        width: 100%;
+    }
+    .products-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .order-section {
+        width: 100%;
+        margin-top: 2.5rem;
+    }
+
+    .btn {
+        width: 50%;
+        right: 25%;
+    }
+
+    .confirmation-container {
+        right: 1%;
+        top: 1.9%;
+        width: 98%;
+        font-size: 0.9rem;
+        border-radius: 1rem;
+    } 
+
+    .order-confirmed h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    .confirm-detail h3 {
+        font-size: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .confirm-details img {
+        width: 3rem;
+        height: 2.8rem;
+        border-radius: 5px;
+        margin-right: 25px;
+    }
+} 
