@@ -1,5 +1,5 @@
 
-fetch('/product-list-with-cart-main/data.json')
+fetch('./product-list-with-cart-main/data.json')
   .then(res => {
     if (!res.ok) throw new Error(`Error fetching data`);
     return res.json();
